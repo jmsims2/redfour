@@ -12,4 +12,22 @@ defmodule PhysicsTest do
   test "Earth Escape Velocity" do
     assert Physics.Rocketry.escape_velocity(:earth) == 11.2
   end
+
+  test "Mars Escape Velocity" do
+    assert Physics.Rocketry.escape_velocity(:mars) == 5.1
+  end
+
+  test "Earth Moon Escape Velocity" do
+    assert Physics.Rocketry.escape_velocity(:earth_moon) == 2.4
+  end
+
+  test "Earth Orbital Term > 3 hours" do
+    height = 100
+    assert Physics.Rocketry.orbital_term(height) > 3
+  end
+
+  test "Earth Orbital Term < 5 hours" do
+    height = 100
+    assert Physics.Rocketry.orbital_term(height) < 5
+  end
 end
